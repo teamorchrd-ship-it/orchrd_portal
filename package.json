@@ -31,12 +31,12 @@
     "vite": "^8.0.12"
   },
 
-  "homepage": "https://github.com/teamorchrd-ship-it/orchrd_portal",
+  "homepage": "https://teamorchrd-ship-it.github.io/orchrd_portal",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist -b demo-v1"
   }
 }
