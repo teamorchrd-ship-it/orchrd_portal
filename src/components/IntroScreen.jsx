@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { ArrowRight, Smartphone, Sparkles, Zap, Rocket, ChevronRight, Clock } from 'lucide-react';
 import ThreeBackground from './ThreeBackground';
+import { track } from '../lib/analytics';
 import './IntroScreen.css';
 
 const INTRO_STEPS = [
@@ -44,6 +45,7 @@ export default function IntroScreen({ appName, setAppName, onComplete }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (appName.trim()) {
+      track('app_named', { appName: appName.trim() });
       setIsExiting(true);
       setTimeout(() => {
         onComplete();
