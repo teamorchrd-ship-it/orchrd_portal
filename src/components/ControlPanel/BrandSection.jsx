@@ -1,7 +1,7 @@
 import { Upload } from 'lucide-react';
 import CollapsibleSection from './CollapsibleSection';
 
-export default function BrandSection({ appName, logoUrl, onNameChange, onLogoChange }) {
+export default function BrandSection({ appName, logoUrl, onNameChange, onLogoChange, open, onToggle }) {
   const handleFile = (e) => {
     const file = e.target.files[0];
     if (!file) return;
@@ -11,7 +11,14 @@ export default function BrandSection({ appName, logoUrl, onNameChange, onLogoCha
   };
 
   return (
-    <CollapsibleSection title="Brand" value={appName} defaultOpen={true}>
+    <CollapsibleSection
+      id="section-shape"
+      title="🎨 Shape your brand"
+      subtitle="Give your app a unique identity"
+      value={appName}
+      open={open}
+      onToggle={onToggle}
+    >
       <div className="form-group">
         <label className="form-label">App Name</label>
         <input

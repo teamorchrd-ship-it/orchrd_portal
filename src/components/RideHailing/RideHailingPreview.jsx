@@ -431,9 +431,9 @@ const TopBar = ({ appConfig, compact }) => (
     boxShadow: '0 4px 20px rgba(0,0,0,0.14)',
   }}>
     <div style={{ width: 28, height: 28, borderRadius: 8, overflow: 'hidden', flexShrink: 0, background: 'var(--m3-primary-container)' }}>
-      <img src={appConfig.logoUrl} alt="logo" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+      <img key={appConfig.logoUrl} className="toolbar-logo-fade" src={appConfig.logoUrl} alt="logo" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
     </div>
-    <span style={{ fontWeight: 800, fontSize: compact ? '0.82rem' : '0.9rem', color: 'var(--m3-on-surface)', letterSpacing: '-0.3px', flex: 1 }}>
+    <span key={appConfig.appName} className="toolbar-name-fade" style={{ fontWeight: 800, fontSize: compact ? '0.82rem' : '0.9rem', color: 'var(--m3-on-surface)', letterSpacing: '-0.3px', flex: 1 }}>
       {appConfig.appName}
     </span>
     {appConfig.features?.notifications && (

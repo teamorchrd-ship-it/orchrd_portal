@@ -2,8 +2,8 @@ import { Sun, Moon, Monitor } from 'lucide-react';
 import CollapsibleSection from './CollapsibleSection';
 
 const PRESETS = [
-  '#6750A4', '#C62828', '#00695C',
-  '#E65100', '#1565C0', '#37474F',
+  '#E53935', '#2E7D32', '#6750A4',
+  '#1565C0', '#E65100', '#37474F',
 ];
 
 const CORNERS = [
@@ -18,7 +18,7 @@ const MODES = [
   { id: 'auto',  label: 'Auto',  icon: Monitor },
 ];
 
-export default function AppearanceSection({ theme, onChange }) {
+export default function AppearanceSection({ theme, onChange, open, onToggle }) {
   const activeMode = MODES.find(m => m.id === theme.mode) || MODES[0];
 
   const handleMode = (id) => {
@@ -31,7 +31,14 @@ export default function AppearanceSection({ theme, onChange }) {
   };
 
   return (
-    <CollapsibleSection title="Appearance" value={activeMode.label}>
+    <CollapsibleSection
+      id="section-style"
+      title="✨ Style your app"
+      subtitle="Choose the look and feel"
+      value={activeMode.label}
+      open={open}
+      onToggle={onToggle}
+    >
       <div className="form-group">
         <label className="form-label">Theme</label>
         <div className="chips-grid">

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ArrowRight, Smartphone, Sparkles, Zap, Rocket, ChevronRight, Clock } from 'lucide-react';
+import { ArrowRight, Zap, Rocket, ChevronRight, Clock } from 'lucide-react';
 import ThreeBackground from './ThreeBackground';
 import { track } from '../lib/analytics';
 import './IntroScreen.css';
@@ -11,22 +11,12 @@ const INTRO_STEPS = [
     color: "#775652"
   },
   {
-    text: "Orchrd changes the game. Design, configure, and launch your mobile experience in minutes.",
+    text: "Orchrd flips that. Pick a template, shape your brand, and watch your app update instantly — no code, no build times.",
     icon: <Zap className="intro-step-icon" />,
     color: "#BA1A1A"
   },
   {
-    text: "Take complete control of your brand with dynamic layouts, customized Material Design themes, and direct asset controls.",
-    icon: <Smartphone className="intro-step-icon" />,
-    color: "#005FAF"
-  },
-  {
-    text: "No complex environments. No build waiting times. Instantly preview your application in real-time.",
-    icon: <Sparkles className="intro-step-icon" />,
-    color: "#006A6A"
-  },
-  {
-    text: "Ready to launch your vision? Let's start by naming your application.",
+    text: "Ready to watch your app rebuild itself in real time? Let's start by naming your application.",
     icon: <Rocket className="intro-step-icon" />,
     color: "#8B5000"
   }

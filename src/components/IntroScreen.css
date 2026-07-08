@@ -228,11 +228,60 @@
   padding: 2.5rem;
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.08);
   border: 1px solid rgba(0, 0, 0, 0.06);
+  max-height: min(680px, 88vh);
+  overflow-y: auto;
+  scrollbar-width: thin;
 }
+
+.outro-form-wrapper::-webkit-scrollbar { width: 5px; }
+.outro-form-wrapper::-webkit-scrollbar-track { background: transparent; }
+.outro-form-wrapper::-webkit-scrollbar-thumb { background: rgba(0, 0, 0, 0.15); border-radius: 3px; }
 
 .outro-form-title {
   font-size: 2.4rem !important;
-  margin-bottom: 2rem;
+}
+
+.outro-form-subtitle {
+  font-size: 0.92rem;
+  color: rgba(0, 0, 0, 0.55);
+  line-height: 1.5;
+  margin-bottom: 1.75rem;
+}
+
+.outro-star-row {
+  display: flex;
+  gap: 6px;
+}
+
+.outro-star-btn {
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.22);
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.outro-star-btn:hover { transform: scale(1.12); }
+.outro-star-btn.active { color: var(--portal-accent); }
+
+.outro-checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.65);
+  cursor: pointer;
+  margin-top: 0.6rem;
+}
+
+.outro-checkbox-row input[type='checkbox'] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--portal-accent);
+  cursor: pointer;
+  flex-shrink: 0;
 }
 
 .outro-feedback-form {

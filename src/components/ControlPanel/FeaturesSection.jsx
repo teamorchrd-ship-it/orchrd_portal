@@ -20,12 +20,19 @@ const Toggle = ({ checked, onChange }) => (
   </label>
 );
 
-export default function FeaturesSection({ template, features, onChange }) {
+export default function FeaturesSection({ template, features, onChange, open, onToggle }) {
   const visible = ALL_FEATURES.filter(f => f.templates.includes(template));
   const activeCount = visible.filter(({ key }) => features[key]).length;
 
   return (
-    <CollapsibleSection title="Features" value={`${activeCount} on`}>
+    <CollapsibleSection
+      id="section-grow"
+      title="🍎 Grow your experience"
+      subtitle="Add features and modules"
+      value={`${activeCount} on`}
+      open={open}
+      onToggle={onToggle}
+    >
       <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
         {visible.map(({ key, label, icon: Icon }) => (
           <div key={key} className="toggle-row">

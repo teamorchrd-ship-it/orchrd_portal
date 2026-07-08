@@ -179,9 +179,9 @@ const SocialMediaPreview = ({ isExpanded, appConfig }) => {
         {/* Sticky app bar */}
         <div style={{ padding: '12px 14px 8px', display: 'flex', alignItems: 'center', gap: 10, background: 'var(--m3-bg)', flexShrink: 0 }}>
           <div style={{ width: 34, height: 34, borderRadius: 10, background: 'var(--m3-primary-container)', overflow: 'hidden', flexShrink: 0 }}>
-            <img src={appConfig.logoUrl} alt="logo" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            <img key={appConfig.logoUrl} className="toolbar-logo-fade" src={appConfig.logoUrl} alt="logo" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
           </div>
-          <span style={{ fontWeight: 900, fontSize: '1.1rem', color: 'var(--m3-on-bg)', letterSpacing: '-0.4px', flex: 1 }}>
+          <span key={appConfig.appName} className="toolbar-name-fade" style={{ fontWeight: 900, fontSize: '1.1rem', color: 'var(--m3-on-bg)', letterSpacing: '-0.4px', flex: 1 }}>
             {appConfig.appName}
           </span>
           {features.search && <Search size={17} style={{ color: 'var(--m3-on-surface-variant)' }} />}

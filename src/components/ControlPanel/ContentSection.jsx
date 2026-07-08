@@ -1,6 +1,6 @@
 import CollapsibleSection from './CollapsibleSection';
 
-const STYLES = [
+export const STYLES = [
   { id: 'professional', label: 'Professional' },
   { id: 'startup',      label: 'Startup' },
   { id: 'fashion',      label: 'Fashion' },
@@ -10,11 +10,18 @@ const STYLES = [
   { id: 'sports',       label: 'Sports' },
 ];
 
-export default function ContentSection({ value, onChange }) {
+export default function ContentSection({ value, onChange, open, onToggle }) {
   const active = STYLES.find(s => s.id === value);
 
   return (
-    <CollapsibleSection title="Content Style" value={active?.label}>
+    <CollapsibleSection
+      id="section-content"
+      title="🌿 Demo data"
+      subtitle="Manage the content in your app"
+      value={active?.label}
+      open={open}
+      onToggle={onToggle}
+    >
       <div className="chips-grid">
         {STYLES.map(({ id, label }) => (
           <button

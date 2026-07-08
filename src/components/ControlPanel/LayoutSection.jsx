@@ -1,6 +1,6 @@
 import CollapsibleSection from './CollapsibleSection';
 
-const LAYOUTS = {
+export const LAYOUTS = {
   social: [
     { id: 'feed',     label: 'Feed' },
     { id: 'cards',    label: 'Cards' },
@@ -18,12 +18,19 @@ const LAYOUTS = {
   ],
 };
 
-export default function LayoutSection({ template, value, onChange }) {
+export default function LayoutSection({ template, value, onChange, open, onToggle }) {
   const options = LAYOUTS[template] || LAYOUTS.social;
   const active = options.find(o => o.id === value) || options[0];
 
   return (
-    <CollapsibleSection title="Layout" value={active?.label}>
+    <CollapsibleSection
+      id="section-layout"
+      title="📐 Structure & layout"
+      subtitle="Arrange your content"
+      value={active?.label}
+      open={open}
+      onToggle={onToggle}
+    >
       <div className="chips-grid">
         {options.map(({ id, label }) => (
           <button

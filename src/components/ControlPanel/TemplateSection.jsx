@@ -11,11 +11,18 @@ const TEMPLATES = [
   { id: 'finance',   label: 'Finance',      icon: DollarSign,    available: false },
 ];
 
-export default function TemplateSection({ value, onChange }) {
+export default function TemplateSection({ value, onChange, open, onToggle }) {
   const active = TEMPLATES.find(t => t.id === value);
 
   return (
-    <CollapsibleSection title="Template" value={active?.label} defaultOpen={true}>
+    <CollapsibleSection
+      id="section-plant"
+      title="🌱 Plant your idea"
+      subtitle="Choose a blueprint to get started"
+      value={active?.label}
+      open={open}
+      onToggle={onToggle}
+    >
       <div className="template-chips-grid">
         {TEMPLATES.map(({ id, label, icon: Icon, available }) => (
           <button

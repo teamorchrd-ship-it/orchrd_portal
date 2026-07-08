@@ -20,7 +20,7 @@
  * each into its own tab so funnel counts don't mix with lead details.
  */
 
-const LEAD_HEADERS = ['timestamp', 'sessionId', 'email', 'wouldUse', 'priceBucket', 'feedback', 'utmSource', 'utmMedium', 'utmCampaign', 'referrer'];
+const LEAD_HEADERS = ['timestamp', 'sessionId', 'rating', 'primaryUse', 'favoriteFeature', 'missingFeature', 'likelihoodToUse', 'expectedPrice', 'email', 'wantsInterview', 'wantsNotify', 'createdAt', 'utmSource', 'utmMedium', 'utmCampaign', 'referrer'];
 const EVENT_HEADERS = ['timestamp', 'sessionId', 'event', 'template', 'appName', 'utmSource', 'utmMedium', 'utmCampaign', 'referrer'];
 
 function authorize() {
